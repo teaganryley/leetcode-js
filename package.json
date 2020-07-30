@@ -1,0 +1,16 @@
+{
+  "name": "leetcode-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+	"test": "jest"
+  },
+  "repository": "https://github.com/teaganryley/leetcode-js",
+  "author": "tokyo tea",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "jest": "^26.1.0"
+  }
+}
