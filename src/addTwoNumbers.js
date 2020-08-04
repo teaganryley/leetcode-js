@@ -4,25 +4,33 @@ function ListNode(val, next) {
     this.next = (next===undefined ? null : next);
 }
 
-function prepend(head, data) {
-    return '';
+const prepend = (data, head) => {
+    let temp = new ListNode(data);
+    
+    // if no head, make new list
+    if (head===undefined) {
+        return temp;
+    } else {
+        temp.next = head;
+        return temp;
+    }
 }
 
-function buildList (num) {
-    return '';
+const buildList = num => {
+    // builds linked list from an integer, returns pointer to head of ll
+    return ``;
 }
 
-function printList (head) {
-    return '';
+const printList = head => {
+    // uses traversal to print list contents
+    let current = head;
+    while (current !== null) {
+        console.log(current.data);
+        current = current.next
+    }
 }
 
-/*
- * @param {ListNode} l1
- * @param {ListNode} l2
- * @return {ListNode}
-*/
-
-const addTwoNumbers = function(l1, l2) {
+const addTwoNumbers = (l1, l2) => {
     return true;
 };
 
