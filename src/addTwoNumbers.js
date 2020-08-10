@@ -16,22 +16,37 @@ const prepend = (data, head) => {
     }
 }
 
-const buildList = num => {
-    // builds linked list from an integer, returns pointer to head of ll
-    return ``;
+const toList = num => {
+    // builds linked list from an integer,returns pointer to head of ll
+    const arr = Array.from(String(num), Number);
+    let head;
+
+    arr.forEach(value => {
+        head = prepend(value, head);
+    });
+    
+    /*
+    for (let i = 0; i < arr.length; i++) {
+        head = prepend(arr[i], head);
+    }
+    */
+    return head; 
 }
 
-const printList = head => {
-    // uses traversal to print list contents
+const toArray = head => {
+    // uses traversal to build an array from linked list
     let current = head;
+    const arr = [];
+
     while (current !== null) {
-        console.log(current.data);
-        current = current.next
+        arr.unshift(current.val);        
+        current = current.next;
     }
+    return arr; 
 }
 
 const addTwoNumbers = (l1, l2) => {
     return true;
 };
 
-export { ListNode, prepend, buildList, printList, addTwoNumbers }
+export { ListNode, prepend, toList, toArray, addTwoNumbers }
