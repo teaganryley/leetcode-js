@@ -59,15 +59,22 @@ describe('toArray() testing',()=>{
 
 describe('AddTwo correctness integration tests', ()=>{    
     const testData = [
-        ['', 2, 2, 4],
-        ['', 3, 3, 6],
-        ['', 7, 4, 11]
+        //['base example:', 342, 465, [8,0,7]]
+        ['single node', 1, 1, [2]]
     ];
     
-    test.each(testData)('desc: %s | a: %i | b: %i | expected: %i', (desc, a, b, expected)=>{
-        //build list
+    test.only.each(testData)('desc: %s | a: %i | b: %i | expected: %i', (desc, l1, l2, expected)=>{
+        //build lists
+        let list1 = AddTwo.toList(l1);
+        let list2 = AddTwo.toList(l2);
         
-        // TODO: real correctness tests
-        expect(a + b).toBe(expected);
+        let result = AddTwo.addTwoLists;
+
+        //TODO: might have to reverse expected array
+
+        // traverse result, comparing to expected
+        expected.forEach(value => {
+            expect(result.val).toBe(value);
+        });
     });
 });

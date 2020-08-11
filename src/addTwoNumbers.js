@@ -39,8 +39,8 @@ const toArray = head => {
     return arr; 
 }
 
-const addTwoNumbers = (l1, l2) => {
-    return true;
+const addTwoLists = (l1, l2) => {
+    return ListNode();
 };
 
-export { ListNode, prepend, toList, toArray, addTwoNumbers }
+export { ListNode, prepend, toList, toArray, addTwoLists }
