@@ -22,39 +22,31 @@ describe('general test pattern', ()=>{
 */
 
 describe('toList() testing', ()=>{
-    
-    test('toList return type', ()=>{
-        return '';
-    });
-
-    test('single node',()=>{
-        //define mock object
-
-        //call single node/number toList
+    // note: toList implicitly tests prepend fcn
+    test('toList returns ListNode object', ()=>{
+        const mock = new AddTwo.ListNode(1);
         
-        //compare mocked object to return 
-        return '';
+        expect(AddTwo.toList(1)).toEqual(mock);
     });
 
-    test('integration test with append()', () => {
-        // 1217 should map to LL 7->1->2->1
-        let current = AddTwo.toList(1217);
-        let arr = [1,2,1,7];
+    test('toList correctness compared to harcoded list, using traversal',()=>{
+        // build hardcoded list (no append): 2->4->3
+        let mock = new AddTwo.ListNode(2);
+        mock.next = new AddTwo.ListNode(4);
+        mock.next.next = new AddTwo.ListNode(3);
 
-        for (let i = arr.length-1; i >= 0; i--) {
-            expect(current.data).toBe(arr[i]);
-            current = current.next; 
+        let head = AddTwo.toList(342);
+        
+        while (mock !== null) {
+            expect(head).toEqual(mock);
+            mock = mock.next;
+            head = head.next;
         }
-        //let head = AddTwo.buildList(1217);
-        //AddTwo.printList(head);
-        // iterate backwards through num
-        // for each digit:
-        //      assert i = current_node.data
     });
 });
 
-describe('toArray testing',()=>{
-    test('single case correctness', ()=>{
+describe('toArray() testing',()=>{
+    test('correctness over ', ()=>{
         // build hardcoded list (no append)
         const head = new AddTwo.ListNode(2);
         head.next = new AddTwo.ListNode(4);

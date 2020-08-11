@@ -24,17 +24,11 @@ const toList = num => {
     arr.forEach(value => {
         head = prepend(value, head);
     });
-    
-    /*
-    for (let i = 0; i < arr.length; i++) {
-        head = prepend(arr[i], head);
-    }
-    */
     return head; 
 }
 
 const toArray = head => {
-    // uses traversal to build an array from linked list
+    // translates linked list data into array of values, for unit testing purposes.
     let current = head;
     const arr = [];
 
