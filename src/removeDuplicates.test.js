@@ -9,6 +9,7 @@ describe('removeDuplicate correctness testing', ()=>{
 
   test.each(testData)('description: %s | input: %p | expected: %p', (desc, testInput, expected)=>{
     const result = removeDuplicates(testInput);
+    console.log(expected);
     expect(result).toEqual(expected);
   });
 
