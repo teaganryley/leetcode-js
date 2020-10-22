@@ -1,6 +1,6 @@
 import { solution1, solution2 } from './strStr';
 
-describe('strStr correctness testing', ()=>{
+describe('strStr correctness testing', () => {
   const testData = [
     ["hello", "ll", 2],
     ["aaaaa", "bba", -1],
