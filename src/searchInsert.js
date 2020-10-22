@@ -5,7 +5,17 @@ https://leetcode.com/problems/search-insert-position/
 */
 
 function solution1(nums, target) {
-  return false;
+  if (target < nums[0]) { 
+    return 0; 
+  } else if (target > nums[nums.length-1]) {
+    return nums.length;
+  }
+  
+  for (let i = 0; i < nums.length; i++) {
+    if (target <= nums[i]) { 
+      return i; 
+    }
+  }
 }
 
 export { solution1 };
