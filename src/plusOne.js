@@ -9,9 +9,9 @@ Constraints:
 function solution1(digits) {
   for (let i = digits.length - 1; i > -1; i--) {
     if (digits[i] < 9) {
-      digits[i]+=1;
+      digits[i] += 1;
       break;
-    } else if (i===0) {
+    } else if (i === 0) {
       digits[i] = 0;
       digits.unshift(1);
     } else {
