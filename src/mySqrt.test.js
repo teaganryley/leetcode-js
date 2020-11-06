@@ -1,20 +1,28 @@
-import { solution1, solution2 } from './mySqrt';
+import { naiveSquare, newtonSquare, binarySquare } from './mySqrt';
 
-describe('mySqrt(x) correctness testing', ()=>{
-    const testData = [
-      [ 4, 2 ],
-      [ 8, 2 ],
-      [ 0, 0 ],
-      [ 1, 1 ],
-    ];
+describe('mySqrt(x) correctness testing', () => {
+  const testData = [
+    [4, 2],
+    [8, 2],
+    [0, 0],
+    [1, 1],
+    [2, 1],
+    [3, 1],
+    [16, 4],
+  ];
 
-    test.each(testData)('solution1: naive-- arg1: %i, exp: %i', (x, expected)=>{
-      const result = solution1(x);
-      expect(result).toEqual(expected);
-    });
+  test.each(testData)('Naive-- arg1: %i, exp: %i', (x, expected) => {
+    const result = naiveSquare(x);
+    expect(result).toEqual(expected);
+  });
 
-    test.each(testData)('solution2: Newton-- arg1: %i, exp: %i', (x, expected)=>{
-      const result = solution2(x);
-      expect(result).toEqual(expected);
-    });
+  test.each(testData)('Newton-- arg1: %i, exp: %i', (x, expected) => {
+    const result = newtonSquare(x);
+    expect(result).toEqual(expected);
+  });
+
+  test.each(testData)('Binary-- arg1: %i, exp: %i', (x, expected) => {
+    const result = binarySquare(x);
+    expect(result).toEqual(expected);
+  });
 });

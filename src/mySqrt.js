@@ -7,21 +7,21 @@ formulation: x^2 = answer
 */
 
 // naive solution
-const solution1 = (x) => {
+const naiveSquare = (x) => {
   if (x <= 1) {
     return x;
   }
-  
-  let searching = true; 
+
+  let searching = true;
   let n = 2;
 
   while (searching) {
     let square = n * n;
-    
+
     if (square === x) {
       return n;
-    } else if (square > x ) {
-      return n-1;
+    } else if (square > x) {
+      return n - 1;
     } else {
       n++;
     }
@@ -29,18 +29,18 @@ const solution1 = (x) => {
 };
 
 // newton's method
-const solution2 = (x) => {
+const newtonSquare = (x) => {
   if (x === 0) {
     return x;
   }
-  
+
   let guess = x;
   let newGuess;
   let difference = 10; // "large" initial value. replace?
 
   while (difference >= 1) {
     // x_n+1 = x_n - f(x)/f'(x)
-    newGuess = (guess - (guess**2 - x)/ (2 * guess));
+    newGuess = guess - (guess ** 2 - x) / (2 * guess);
     difference = Math.abs(newGuess - guess);
     guess = newGuess;
   }
@@ -48,8 +48,28 @@ const solution2 = (x) => {
 };
 
 // binary search
-const solution3 = (x) => {
+const binarySquare = (x) => {
+  if (x < 2) {
+    return x;
+  }
 
+  let left = 1;
+  let right = x;
+  let best = x;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+
+    if (mid * mid === x) {
+      return mid;
+    } else if (mid * mid > x) {
+      right = mid - 1;
+    } else {
+      best = mid;
+      left = mid + 1;
+    }
+  }
+  return best;
 };
 
-export { solution1, solution2, solution3 };
+export { naiveSquare, newtonSquare, binarySquare };
