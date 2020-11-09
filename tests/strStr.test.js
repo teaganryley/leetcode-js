@@ -1,4 +1,4 @@
-import { solution1, solution2 } from './strStr';
+import { solution1, solution2 } from '../src/strStr';
 
 describe('strStr correctness testing', () => {
   const testData = [

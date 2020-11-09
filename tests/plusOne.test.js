@@ -1,4 +1,4 @@
-import { solution1 } from './plusOne';
+import { solution1 } from '../src/plusOne';
 
 describe('plus one problem correctness testing', ()=>{
   const testData = [

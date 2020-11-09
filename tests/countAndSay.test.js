@@ -1,4 +1,4 @@
-import { solution1 } from './countAndSay';
+import { solution1 } from '../src/countAndSay';
 
 describe('Count and say correctness testing', () => {
   const testData = [

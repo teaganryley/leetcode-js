@@ -1,4 +1,4 @@
-import * as AddTwo from './addTwoNumbers';
+import * as AddTwo from '../src/addTwoNumbers';
 
 // helper methods
 const prepend = (data, head) => {

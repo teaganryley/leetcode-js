@@ -1,4 +1,4 @@
-import removeDuplicates from './removeDuplicates';
+import removeDuplicates from '../src/removeDuplicates';
 
 describe('removeDuplicate correctness testing', ()=>{
   const testData = [

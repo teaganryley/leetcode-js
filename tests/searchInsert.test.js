@@ -1,4 +1,4 @@
-import { solution1 } from './searchInsert';
+import { solution1 } from '../src/searchInsert';
 
 describe('searchInsert correctness testing', () => {
   const testData = [

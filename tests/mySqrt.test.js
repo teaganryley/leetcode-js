@@ -1,4 +1,4 @@
-import { naiveSquare, newtonSquare, binarySquare } from './mySqrt';
+import { naiveSquare, newtonSquare, binarySquare } from '../src/mySqrt';
 
 describe('mySqrt(x) correctness testing', () => {
   const testData = [

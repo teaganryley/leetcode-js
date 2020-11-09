@@ -1,4 +1,4 @@
-import { solution2 } from './maxSubArray';
+import { solution2 } from '../src/maxSubArray';
 
 describe('Max subarray correctness testing', () => {
   const testData = [
